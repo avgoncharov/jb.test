@@ -1,0 +1,25 @@
+﻿<div>	 
+	<div class="col-md-2"><input type="text" ng-model="$ctrl.Id" class="form-control" placeholder="Id"/></div>
+	<div class="col-md-2"><input type="text" ng-model="$ctrl.Version" class="form-control" placeholder="Version"/></div>
+	<div class="col-md-4"><input type="text" ng-model="$ctrl.Description" class="form-control" placeholder="Description"/></div>
+	<div class="col-md-1"><button ng-click="$ctrl.applyFilter()" class="btn btn-primary">Apply</button></div>
+				   
+	
+<div style="padding-top: 40px">
+	<table class="table table-bordered" style="font-size: small" >
+		<tr>
+			<th>Id</th>
+			<th>Version</th>
+			<th>Title</th>
+			<th>Description</th>
+		</tr>
+
+		<tr ng-repeat="itr in $ctrl.data">
+			<td title="{{itr.Id}}" ng-click="$ctrl.open(itr.Id)"><a href="#">{{itr.Id}}</a></td>
+			<td title="{{itr.Version}}">{{itr.Version}}</td>
+			<td title="{{itr.Title}}">{{itr.Title}}</td>
+			<td title="{{itr.Description}}">{{(itr.Description|limitTo:20) + (itr.Description.length > 20 ? '...': '')}}</td>
+		</tr>  
+	</table>	   
+	</div>
+</div>

@@ -1,0 +1,21 @@
+﻿<div class="modal-header">
+	<b>Package metadata view</b>
+	<span class="btn btn-default close" ng-click="$ctrl.close()">&times;</span>
+</div>
+
+<div class="modal-body"> 
+	<div><i>Id:</i> <b>{{$ctrl.Id}}</b></div>
+	<div><i>Version:</i>
+		<select ng-model="$ctrl.selected" class="form-control" ng-change="$ctrl.versionChanged()">
+			<option ng-repeat="itr in $ctrl.versions" value="{{itr.Version}}">{{itr.Version}}</option>
+		</select>
+		
+
+	</div>
+	
+	<div><i>Metadata:</i> <textarea disabled="disabled" rows="20" class="form-control">{{$ctrl.RawData}}</textarea></div>
+</div>
+
+<div class="modal-footer dialog-footer">
+	<button class="btn btn-default" ng-click="$ctrl.close()">Close</button>
+</div>
