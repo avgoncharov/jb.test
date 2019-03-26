@@ -133,7 +133,7 @@ namespace Jb.Test.DAL.Impl
 				.Where(itr => itr.PackageVersionId == key)
 				.FirstOrDefaultAsync();
 
-			return result?.Data ?? new byte[0];
+			return result?.Data;
 		}
 
 
